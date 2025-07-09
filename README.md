@@ -79,9 +79,11 @@ streamlit run app.py
 
 ## 🏗️ System Architecture
 
+<div align = "center">
+  
+![Model Architecture](architecture.png)
 
-![Model Architecture](Model_Architecture.png)
-
+</div>
 
 ### 🔁 1. Data Ingestion
 
