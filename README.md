@@ -6,8 +6,8 @@ A simple and effective machine learning app that classifies SMS messages as **Sp
 
 ## 🚀 Live Demo
 
-👉 [Click here to open the app](https://smsspamclassifier-edwnnvw2ovwec7d8vgp9dx.streamlit.app)  
-
+👉 [Click here to open the app](https://smsspamclassifier-edwnnvw2ovwec7d8vgp9dx.streamlit.app)
+*(Replace with your deployed Streamlit URL)*
 
 ---
 
@@ -77,6 +77,143 @@ streamlit run app.py
 
 ---
 
+## 🏗️ System Architecture
+
+### 🔁 1. Data Ingestion
+
+- **Source**: `spam.csv`  
+- **Encoding**: ISO-8859-1  
+- **Initial Shape**: 5,572 rows × 5 columns
+
+---
+
+### 🧹 2. Data Cleaning
+
+- Dropped columns: `Unnamed: 2`, `Unnamed: 3`, `Unnamed: 4`  
+- Renamed columns: `v1 → target`, `v2 → text`  
+- Encoded labels: `ham → 0`, `spam → 1`  
+- Removed 403 duplicates  
+- Final shape: 5,169 rows × 2 columns
+
+---
+
+### 🛠️ 3. Feature Engineering
+
+**Derived Features:**
+
+| Feature         | Description                              |
+|----------------|------------------------------------------|
+| `num_characters` | Character count per message              |
+| `num_words`      | Word count per message                   |
+| `num_sentences`  | Sentence count (split by `.`)            |
+
+**Text Transformation:**
+
+- Lowercasing  
+- Tokenization  
+- Stopword Removal  
+- Stemming with Porter Stemmer
+
+---
+
+### 📊 4. Exploratory Data Analysis (EDA)
+
+- **Class Balance**:  
+  - 87.4% Ham (4,516)  
+  - 12.6% Spam (653)  
+
+- **Key Insights**:  
+  - Spam messages are ~95% longer  
+  - More words per message in spam  
+  - Frequent spam keywords: `free`, `call`, `txt`, `claim`, `prize`  
+  - Frequent ham keywords: `go`, `get`, `love`, `good`, `like`
+
+- **Visualizations**:  
+  - Label distribution pie chart  
+  - Word clouds (spam vs ham)  
+  - Top 30 words (bar chart)
+
+---
+
+### 🧠 5. Text Vectorization
+
+- **Technique**: TF-IDF  
+- **Max Features**: 3,000  
+- Converts text into sparse numerical matrix
+
+---
+
+### 🤖 6. Model Training
+
+**Algorithms Tested**:
+
+- GaussianNB, MultinomialNB, BernoulliNB  
+- Logistic Regression, SVC, KNN  
+- Decision Tree, Random Forest  
+- AdaBoost, GradientBoosting, XGBoost  
+- BaggingClassifier, ExtraTrees  
+
+**Validation Strategy**: 80/20 split  
+**Primary Metric**: **Precision**
+
+---
+
+### 📈 7. Model Evaluation
+
+| Model          | Accuracy | Precision |
+|----------------|----------|-----------|
+| MultinomialNB  | 97.78%   | **1.00**    |
+| RandomForest   | 97.78%   | 0.99      |
+| ExtraTrees     | 98.16%   | 0.98      |
+
+---
+
+### 🤝 8. Ensemble Learning
+
+- **Voting Classifier**: (SVC + MNB + ExtraTrees)  
+  - Accuracy: 98.16%  
+  - Precision: **99.17%**
+
+- **Stacking Classifier**: (Same base + RF meta)  
+  - Accuracy: 98.55%  
+  - Precision: 96.95%
+
+---
+
+### 💾 9. Model Persistence
+
+- `model.pkl`: Final MultinomialNB model  
+- `vectorizer.pkl`: TF-IDF vectorizer (3,000 features)
+
+---
+
+## 🧾 Component Summary
+
+| Component         | Value                              | Notes                             |
+|------------------|------------------------------------|-----------------------------------|
+| Dataset Size      | 5,572 → 5,169 rows                 | After removing duplicates         |
+| Class Ratio       | 87.4% ham / 12.6% spam             | Slightly imbalanced               |
+| Text Pipeline     | Lowercase → Tokenize → Stem        | `transform_text()` function       |
+| Vectorizer        | TF-IDF, max_features = 3000        | Custom trained                    |
+| Best Base Model   | MultinomialNB                      | Precision = **1.00**              |
+| Best Ensemble     | Voting Classifier                  | Precision = 99.17%                |
+| Deployment Files  | `model.pkl`, `vectorizer.pkl`      | For Streamlit inference           |
+
+---
+
+## 🔍 Recommendations
+
+| Area                | Suggestion                                           |
+|---------------------|------------------------------------------------------|
+| Class Imbalance     | Try SMOTE or under-sampling techniques               |
+| Hyperparameter Tuning | Tune `max_features`, test n-gram ranges            |
+| Embedding Options   | Test BERT, Sentence Transformers                     |
+| Thresholding        | Use probability threshold for precision-recall tradeoff |
+| Monitoring          | Track input message patterns for concept drift      |
+| Safety              | Add fallback for low-confidence predictions         |
+
+---
+
 ## 🔍 Examples
 
 **📥 Input (Ham):**  
@@ -97,11 +234,11 @@ You've won a free cruise! Click here to claim your prize now.
 
 ## 🛠 Tech Stack
 
-- 🐍 Python
-- 📊 scikit-learn
-- 🔤 NLTK
-- 🧠 TF-IDF Vectorizer
-- 🌐 Streamlit
+- 🐍 Python  
+- 📊 scikit-learn  
+- 🔤 NLTK  
+- 🧠 TF-IDF Vectorizer  
+- 🌐 Streamlit  
 
 ---
 
