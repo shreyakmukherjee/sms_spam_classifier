@@ -1,4 +1,4 @@
-# 📩 SMS Spam Classifier
+# 📩 AI-Powered SMS Spam Classifier Using NLP and Machine Learning
 
 A simple and effective machine learning app that classifies SMS messages as **Spam** or **Not Spam** using Natural Language Processing (NLP) and the Naive Bayes algorithm. Built with ❤️ using **Streamlit**, **scikit-learn**, and **NLTK**.
 
