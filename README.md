@@ -7,7 +7,7 @@ A simple and effective machine learning app that classifies SMS messages as **Sp
 ## 🚀 Live Demo
 
 👉 [Click here to open the app](https://smsspamclassifier-edwnnvw2ovwec7d8vgp9dx.streamlit.app)
-*(Replace with your deployed Streamlit URL)*
+
 
 ---
 
