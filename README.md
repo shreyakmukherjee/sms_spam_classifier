@@ -79,6 +79,10 @@ streamlit run app.py
 
 ## 🏗️ System Architecture
 
+
+![Model Architecture](Model_Architecture.png)
+
+
 ### 🔁 1. Data Ingestion
 
 - **Source**: `spam.csv`  
