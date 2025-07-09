@@ -63,7 +63,7 @@ streamlit run app.py
 ## 📊 Dataset
 
 📁 `spam.csv`  
-- Source: [Kaggle - SMS Spam Collection](https://www.kaggle.com/datasets/uciml/sms-spam-collection-dataset)  
+- Source: [SMS Spam Collection](https://archive.ics.uci.edu/dataset/228/sms+spam+collection)  
 - 5,572 SMS messages labeled as **spam** or **ham** (not spam)
 
 ---
