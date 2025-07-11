@@ -81,7 +81,7 @@ streamlit run app.py
 
 <div align = "center">
   
-![Model Architecture](architecture.png)
+![Model Architecture](images/architecture.png)
 
 </div>
 
@@ -171,6 +171,68 @@ streamlit run app.py
 | MultinomialNB  | 97.78%   | **1.00**    |
 | RandomForest   | 97.78%   | 0.99      |
 | ExtraTrees     | 98.16%   | 0.98      |
+
+---
+
+## 📊 SMS Spam Classifier - Visualizations
+
+<div align="center">
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="images/output_images/class_distribution.png" width="95%"/><br/>
+      <strong>1. Class Distribution</strong>
+    </td>
+    <td align="center">
+      <img src="images/output_images/character_count.png" width="95%"/><br/>
+      <strong>2. Character Count</strong>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="images/output_images/word_count.png" width="95%"/><br/>
+      <strong>3. Word Count</strong>
+    </td>
+    <td align="center">
+      <img src="images/output_images/spam_word_frequency.png" width="95%"/><br/>
+      <strong>4. Spam Word Frequency</strong>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="images/output_images/ham_word_frequency.png" width="95%"/><br/>
+      <strong>5. Ham Word Frequency</strong>
+    </td>
+    <td align="center">
+      <img src="images/output_images/message_length_analysis.png" width="95%"/><br/>
+      <strong>6. Message Length Analysis</strong>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="images/output_images/algorithm_comparison.png" width="95%"/><br/>
+      <strong>7. Algorithm Comparison</strong>
+    </td>
+    <td align="center">
+      <img src="images/output_images/correlation_heatmap.png" width="95%"/><br/>
+      <strong>8. Correlation Heatmap</strong>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="images/output_images/spam_word_count.png" width="95%"/><br/>
+      <strong>9. Spam Word Count</strong>
+    </td>
+    <td align="center">
+      <img src="images/output_images/ham_word_count.png" width="95%"/><br/>
+      <strong>10. Ham Word Count</strong>
+    </td>
+  </tr>
+</table>
+
+</div>
+
 
 ---
 
